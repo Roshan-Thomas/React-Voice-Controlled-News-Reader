@@ -1,13 +1,26 @@
-import React from 'react'
+import React, { useState, useEffect, createRef } from 'react'
 import { Card, CardActions, CardActionArea, CardContent, CardMedia, Button, Typography } from '@material-ui/core'
+import classNames from 'classnames';
 
 import useStyles from './styles.js';
 
-const NewsCard = ({ article: { description, publishedAt, source, title, url, urlToImage }, i }) => {
+const NewsCard = ({ article: { description, publishedAt, source, title, url, urlToImage }, i, activeArticle }) => {
     const classes = useStyles();
+    const [elRefs, setElRefs] = useState([]);
+    const scrollToRef = (ref) => window.scroll(0, ref.current.offsetTop - 50);
+
+    useEffect(() => {
+        setElRefs((refs) => Array(20).fill().map((_, j) => refs[j] || createRef()));
+    }, []);
+
+    useEffect(() => {
+        if(i === activeArticle && elRefs[activeArticle]) {
+            scrollToRef(elRefs[activeArticle]);
+        }
+    }, [i, activeArticle, elRefs])
     
     return (
-        <Card className={classes.card}>
+        <Card ref={elRefs[i]} className={classNames(classes.card, activeArticle === i ? classes.activeCard : null)}>
             <CardActionArea href={url} target="_blank">
                 <CardMedia className={classes.media} image={urlToImage || 'https://www.google.com/url?sa=i&url=https%3A%2F%2Felements.envato.com%2Fbroadcast-design-news-package-VADET4K&psig=AOvVaw03KBFxrmMESzrJypFkB5yv&ust=1597670023364000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOCC7-Xmn-sCFQAAAAAdAAAAABAZ'} />
                 <div className={classes.details}>
