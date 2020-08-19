@@ -33,7 +33,7 @@ const App = () => {
               const article = articles[parsedNumber - 1];
     
               if (parsedNumber > 20) {
-                alanBtn().playText('Please try that again...');
+                alanBtn().playText('Only numbers from 1 to 20 can be choosen. Please try that again...');
               } else if (article) {
                 window.open(article.url, '_blank');
                 alanBtn().playText('Opening...');
@@ -56,14 +56,17 @@ const App = () => {
                 ) : null}
                 <img src="https://alan.app/voice/images/previews/preview.jpg" className={classes.alanLogo} alt="logo" />
             </div>
+            {/* <p className={classes.para}>Tap on the microphone to activte Alan AI, and try out the commands. </p> */}
             <NewsCards articles={newsArticles} activeArticle={activeArticle} />
             <Modal isOpen={isOpen} setIsOpen={setIsOpen} />
             {!newsArticles.length ? (
                 <div className={classes.footer}>
+                  <br />
                 <Typography variant="body1" component="h2">
-                    Created by
-                    <a className={classes.link} href="https://www.linkedin.com/in/roshan-thomas-88b9a618b/"> Roshan Thomas</a> -
-                    <a className={classes.link} href="https://github.com/Roshan-Thomas"> Github</a>
+                    Created by Roshan Thomas -
+                    <a className={classes.link} href="https://www.linkedin.com/in/roshan-thomas-88b9a618b/"> Linkedin</a> |
+                    <a className={classes.link} href="https://github.com/Roshan-Thomas"> Github</a> |
+                    <a className={classes.link} href="https://roshanthomas.netlify.app/"> Portfolio</a>
                 </Typography>
                 </div>
             ) : null}

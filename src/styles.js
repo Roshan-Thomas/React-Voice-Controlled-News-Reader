@@ -23,6 +23,10 @@ export default makeStyles((theme) => ({
   image: {
     marginLeft: 20,
   },
+  para: {
+    textAlign: 'center',
+    justifyContent: 'center',
+  },
   card: {
     display: 'flex',
     justifyContent: 'center',
