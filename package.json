@@ -11,7 +11,7 @@
     "classnames": "^2.2.6",
     "emailjs-com": "^2.6.3",
     "react": "^16.14.0",
-    "react-dom": "^16.13.1",
+    "react-dom": "^16.14.0",
     "react-scripts": "3.4.3",
     "words-to-numbers": "^1.5.1"
   },
