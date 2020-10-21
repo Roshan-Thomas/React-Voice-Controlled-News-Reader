@@ -12,7 +12,7 @@
     "emailjs-com": "^2.6.3",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
-    "react-scripts": "3.4.3",
+    "react-scripts": "3.4.4",
     "words-to-numbers": "^1.5.1"
   },
   "scripts": {
