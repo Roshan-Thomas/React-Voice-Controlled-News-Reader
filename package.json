@@ -10,7 +10,7 @@
     "@testing-library/user-event": "^12.7.1",
     "classnames": "^2.2.6",
     "emailjs-com": "^2.6.4",
-    "react": "^16.14.0",
+    "react": "^17.0.1",
     "react-dom": "^16.14.0",
     "react-scripts": "4.0.2",
     "words-to-numbers": "^1.5.1"
